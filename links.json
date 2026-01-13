@@ -1,10 +1,10 @@
 {
-  "Generator Aksara": {
-    "url": "https://anglumea.com/aksara",
+  "Generator Aksara Jawa": {
+    "url": "https://tools.anglumea.com/aksara",
     "target": "_blank"
   },
   "Kalkulator Dana Pensiun": {
-    "url": "https://anglumea.com/pensiun",
+    "url": "https://tools.anglumea.com/pensiun",
     "target": "_self"
   },
   "Text Transformer": {
@@ -16,25 +16,25 @@
     "target": "_blank"
   },
 
-  "Anglumea Core": {
-    "url": "anglumea.com",
+  "Anglumea Website": {
+    "url": "https://anglumea.com",
     "target": "_self"
   },
-  "Utility System": {
-    "url": "/projects/utility",
+  "Korean Study": {
+    "url": "play.anglumea.com/korean",
     "target": "_self"
   },
-  "Project Alpha": {
-    "url": "/projects/alpha",
+  "Learn Kanji": {
+    "url": "play.anglumea.com/kanji",
     "target": "_self"
   },
 
-  "Silent Loop": {
-    "url": "/games/silent-loop",
+  "Game 001": {
+    "url": "/games/001",
     "target": "_self"
   },
-  "Prototype One": {
-    "url": "/games/prototype-one",
+  "Game002e": {
+    "url": "/games/002",
     "target": "_self"
   },
   "Game Demo": {
