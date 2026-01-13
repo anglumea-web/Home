@@ -1,40 +1,55 @@
 {
-  "Generator Aksara Jawa": {
-    "url": "https://tools.anglumea.com/aksara",
-    "target": "_blank"
-  },
-  "Kalkulator Dana Pensiun": {
-    "url": "https://tools.anglumea.com/pensiun",
-    "target": "_self"
-  },
-  "Text Transformer": {
-    "url": "/tools/text-transformer",
-    "target": "_self"
-  },
-  "Crypto Tracker": {
-    "url": "https://crypto.anglumea.com",
-    "target": "_blank"
-  },
-
-  "Anglumea Website": {
-    "url": "https://anglumea.com",
-    "target": "_self"
-  },
-  "Korean Study": {
-    "url": "play.anglumea.com/korean",
-    "target": "_self"
-  },
-  "Learn Kanji": {
-    "url": "play.anglumea.com/kanji",
-    "target": "_self"
-  },
-
-  "Game 001": {
-    "url": "/games/001",
-    "target": "_self"
-  },
-  "Game002e": {
-    "url": "/games/002",
+  "tools": [
+    {
+      "title": "Generator Aksara",
+      "url": "https://tools.anglumea.com/aksara"
+    },
+    {
+      "title": "Kalkulator Dana Pensiun",
+      "url": "https://anglumea.com/kalkulator-bunga"
+    },
+    {
+      "title": "Text Transformer",
+      "url": "https://transform.anglumea.com"
+    },
+    {
+      "title": "Crypto Tracker",
+      "url": "https://crypto.anglumea.com"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Anglumea Website",
+      "url": "https://anglumea.com"
+    },
+    {
+      "title": "Korean Study",
+      "url": "https://korean.anglumea.com"
+    },
+    {
+      "title": "Learn Kanji",
+      "url": "https://kanji.anglumea.com"
+    },
+    {
+      "title": "Library",
+      "url": "https://anglumea.com"
+    }
+  ],
+  "games": [
+    {
+      "title": "Game001",
+      "url": "https://game1.anglumea.com"
+    },
+    {
+      "title": "Prototype One",
+      "url": "https://proto.anglumea.com"
+    },
+    {
+      "title": "Game002",
+      "url": "https://game2.anglumea.com"
+    }
+  ]
+}    "url": "/games/002",
     "target": "_self"
   },
   "Game Demo": {
