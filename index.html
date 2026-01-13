@@ -1,86 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anglumea Ultra</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<title>Anglumea — Quiet Systems Archive</title>
+<meta name="description" content="Anglumea is a quiet archive of independent digital systems, tools, projects, and experimental games.">
+<meta name="keywords" content="Anglumea, tools, projects, games, digital archive, indie systems">
+<meta name="theme-color" content="#0b0f14">
+<link rel="canonical" href="https://anglumea.com/">
 
-  <link rel="stylesheet" href="style.css" />
+<meta property="og:title" content="Anglumea — Quiet Systems Archive">
+<meta property="og:description" content="A minimalist digital archive of independent tools, projects and experimental systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anglumea.com/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div id="bg-parallax"></div>
+<div id="bg-parallax"></div>
 
-  <main id="app">
-    <div class="brand">
-      <h1>ANGLUMEA</h1>
-      <span>quiet systems archive</span>
-    </div>
+<main id="app">
 
-    <nav class="core-nav">
-      <button data-index="0">tools</button>
-      <button data-index="1">projects</button>
-      <button data-index="2">games</button>
-    </nav>
+  <header class="brand">
+    <h1>ANGLUMEA</h1>
+    <span>quiet systems archive</span>
+  </header>
 
-    <section class="viewport">
-      <div class="track">
+  <nav class="core-nav" aria-label="Primary navigation">
+    <button data-index="0">tools</button>
+    <button data-index="1">projects</button>
+    <button data-index="2">games</button>
+  </nav>
 
-        <!-- TOOLS -->
-        <div class="panel">
-          <div class="panel-header"><h2>Tools</h2></div>
-          <div class="slider">
-            <div class="card active">Generator Aksara</div>
-            <div class="card">Kalkulator Dana Pensiun</div>
-            <div class="card">Text Transformer</div>
-            <div class="card">Crypto Tracker</div>
-          </div>
-        </div>
+  <section class="viewport">
 
-        <!-- PROJECTS -->
-        <div class="panel">
-          <div class="panel-header"><h2>Projects</h2></div>
-          <div class="slider">
-            <div class="card active">Anglumea Website</div>
-            <div class="card">Korean Study</div>
-            <div class="card">Learn Kanji</div>
-          </div>
-        </div>
+    <div class="track">
 
-        <!-- GAMES -->
-        <div class="panel">
-          <div class="panel-header"><h2>Games</h2></div>
-          <div class="slider">
-            <div class="card active">Game001</div>
-            <div class="card">Prototype One</div>
-            <div class="card">Game002</div>
-          </div>
-        </div>
-
+      <!-- TOOLS -->
+      <div class="panel">
+        <div class="panel-header"><h2>Tools</h2></div>
+        <div class="slider" id="tools-slider"></div>
       </div>
 
-      <div class="arrow arrow-left">&#10094;</div>
-      <div class="arrow arrow-right">&#10095;</div>
-    </section>
+      <!-- PROJECTS -->
+      <div class="panel">
+        <div class="panel-header"><h2>Projects</h2></div>
+        <div class="slider" id="projects-slider"></div>
+      </div>
 
-    <div class="status">status · active</div>
+      <!-- GAMES -->
+      <div class="panel">
+        <div class="panel-header"><h2>Games</h2></div>
+        <div class="slider" id="games-slider"></div>
+      </div>
 
-    <div class="peripheral">
-      <span data-modal="about">about</span>
-      <span data-modal="support">support</span>
-      <span data-modal="follow">follow</span>
     </div>
-  </main>
 
-  <div class="modal" id="modal">
-    <div class="modal-box" id="modal-box"></div>
+    <div class="arrow arrow-left" aria-label="Previous">&#10094;</div>
+    <div class="arrow arrow-right" aria-label="Next">&#10095;</div>
+
+  </section>
+
+  <footer class="status">status · active</footer>
+
+  <div class="peripheral">
+    <span data-modal="about">about</span>
+    <span data-modal="support">support</span>
+    <span data-modal="follow">follow</span>
   </div>
 
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  <script src="main.js"></script>
+</main>
+
+<div class="modal" id="modal">
+  <div class="modal-box" id="modal-box"></div>
+</div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="main.js"></script>
+
 </body>
 </html>
