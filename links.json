@@ -49,11 +49,3 @@
       "url": "https://game2.anglumea.com"
     }
   ]
-}    "url": "/games/002",
-    "target": "_self"
-  },
-  "Game Demo": {
-    "url": "/games/demo",
-    "target": "_self"
-  }
-}
