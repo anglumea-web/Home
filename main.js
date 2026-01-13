@@ -191,11 +191,17 @@ arrowRight.addEventListener("click", e => {
 /* ==========================================================
    CARD LINK NAVIGATION
 ========================================================== */
-document.addEventListener("click", e => {
-  const card = e.target.closest(".card");
-  if (!card || !card.dataset.link) return;
+document.addEventListener("pointerup", e => {
+  let el = e.target;
+
+  while (el && !el.classList?.contains("card")) {
+    el = el.parentElement;
+  }
+
+  if (!el || !el.dataset.link) return;
+
   e.stopPropagation();
-  window.open(card.dataset.link, "_blank", "noopener");
+  window.open(el.dataset.link, "_blank", "noopener");
 });
 
 /* ==========================================================
