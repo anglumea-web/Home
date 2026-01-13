@@ -1,4 +1,4 @@
-:root {
+:root{
   --bg:#0b0f14;
   --text:#e6e8ee;
   --muted:#8b91a2;
@@ -14,8 +14,12 @@ html,body{
   overflow:hidden;
 }
 
+/* ===============================
+   BACKGROUND
+================================ */
 #bg-parallax{
-  position:fixed;inset:0;
+  position:fixed;
+  inset:0;
   background:
     radial-gradient(circle at 30% 20%, rgba(124,124,255,.08), transparent 40%),
     radial-gradient(circle at 70% 80%, rgba(255,255,255,.03), transparent 50%);
@@ -23,174 +27,385 @@ html,body{
   z-index:-1;
 }
 
-#app{position:relative;height:100%;padding:48px;}
+/* ===============================
+   APP
+================================ */
+#app{
+  position:relative;
+  height:100%;
+  padding:48px;
+}
 
-.brand h1{font-size:28px;font-weight:400;letter-spacing:.5em;}
-.brand span{display:block;margin-top:6px;font-size:12px;opacity:.5;}
+/* ===============================
+   BRAND
+================================ */
+.brand h1{
+  font-size:28px;
+  font-weight:400;
+  letter-spacing:.5em;
+}
+.brand span{
+  display:block;
+  margin-top:6px;
+  font-size:12px;
+  opacity:.5;
+}
 
-/* NAVIGATION */
+/* ===============================
+   NAVIGATION
+================================ */
 .core-nav{
   position:absolute;
   top:50%;
   left:80px;
   transform:translateY(-50%);
-  display:flex;flex-direction:column;gap:24px;
-  transition:opacity .3s ease, left .3s ease;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  transition:opacity .3s ease,left .3s ease;
 }
-.core-nav.hidden {
+.core-nav.hidden{
   opacity:0;
   pointer-events:none;
 }
 .core-nav button{
-  background:none;border:none;color:var(--muted);
+  background:none;
+  border:none;
+  color:var(--muted);
   font-family:"JetBrains Mono",monospace;
-  cursor:pointer;font-size:13px;
-  padding:4px 8px;border-radius:6px;
+  cursor:pointer;
+  font-size:13px;
+  padding:4px 8px;
+  border-radius:6px;
   transition:color .3s;
 }
-.core-nav button:hover{color:var(--accent);}
+.core-nav button:hover{color:var(--accent)}
 
-/* VIEWPORT / PANELS */
+/* ===============================
+   VIEWPORT + BLUR
+================================ */
 .viewport{
   position:absolute;
-  top:50%;left:180px;
+  top:50%;
+  left:180px;
   transform:translateY(-50%);
   width:calc(100% - 260px);
   min-height:280px;
   overflow:hidden;
   pointer-events:none;
-  transition:all .3s ease;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
-/* Fullscreen soft blur when active */
-.viewport.active::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  backdrop-filter: blur(20px);
-  background: rgba(11, 15, 25, 0.4);
-  z-index: 1;
-  pointer-events: none;
-  transition: opacity .4s ease;
+.viewport.active{
+  pointer-events:auto;
 }
 
+/* full soft blur */
+.viewport.active::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  backdrop-filter:blur(20px);
+  background:rgba(11,15,25,.45);
+  z-index:1;
+  pointer-events:none;
+  touch-action:none;
+}
+
+/* ===============================
+   TRACK / PANELS
+================================ */
 .track{
-  display:flex;
-  width:100%;
-  opacity:0;
   position:relative;
   z-index:2;
+  width:100%;
+  display:flex;
+  opacity:0;
 }
-.panel{flex:0 0 100%;display:none;flex-direction:column;align-items:center;}
-.panel-header h2{
-  font-family:"JetBrains Mono",monospace;
-  font-size:12px;text-transform:uppercase;
-  opacity:.6;letter-spacing:.15em;margin-bottom:12px;
+.panel{
+  flex:0 0 100%;
+  display:none;
+  flex-direction:column;
+  align-items:center;
 }
 
+.panel-header h2{
+  font-family:"JetBrains Mono",monospace;
+  font-size:12px;
+  text-transform:uppercase;
+  opacity:.6;
+  letter-spacing:.15em;
+  margin-bottom:12px;
+}
+
+/* ===============================
+   SLIDER + CARDS
+================================ */
 .slider{
-  display:flex;
-  align-items:center;
-  justify-content:center;
   position:relative;
   width:100%;
   height:250px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .card{
   position:absolute;
-  opacity:0;
-  transform:scale(0.85);
-  transition:all .5s ease;
-  width:220px;height:250px;
-  display:flex;align-items:center;justify-content:center;
-  font-family:"JetBrains Mono",monospace;
-  background:rgba(255,255,255,0.03);
+  width:220px;
+  height:250px;
+  background:rgba(255,255,255,.03);
   border-radius:12px;
-  border:1px solid rgba(124,124,255,0.2);
+  border:1px solid rgba(124,124,255,.2);
+  font-family:"JetBrains Mono",monospace;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transform:scale(.85);
+  transition:opacity .4s ease,transform .4s ease;
   pointer-events:none;
+  overflow:hidden;
 }
+
 .card.active{
   opacity:1;
   transform:scale(1);
-  box-shadow:0 8px 24px rgba(124,124,255,0.25);
   pointer-events:auto;
+  box-shadow:0 8px 24px rgba(124,124,255,.25);
 }
 
-/* ARROWS (updated version) */
+/* ===============================
+   CARD BG
+================================ */
+.card-bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  filter:brightness(.6) contrast(1.1);
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.6),transparent 60%);
+}
+
+.card-title{
+  position:absolute;
+  bottom:16px;
+  left:16px;
+  right:16px;
+  z-index:2;
+  font-size:13px;
+  color:#fff;
+  letter-spacing:.08em;
+}
+
+/* ===============================
+   ARROWS
+================================ */
 .arrow{
-  position:absolute;top:50%;
+  position:absolute;
+  top:50%;
   transform:translateY(-50%);
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(124,124,255,.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-size:22px;
   color:var(--accent);
-  opacity:.8;
   cursor:pointer;
-  display:none;
+  opacity:.8;
   user-select:none;
   z-index:3;
-  width:42px;height:42px;
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(124,124,255,0.08);
-  transition:background .3s ease, transform .2s ease, opacity .3s;
+  transition:background .3s,transform .2s,opacity .3s;
 }
+
 .arrow:hover{
-  background:rgba(124,124,255,0.18);
+  background:rgba(124,124,255,.18);
   transform:translateY(-50%) scale(1.08);
   opacity:1;
 }
-.arrow-left{left:36px;}
-.arrow-right{right:36px;}
 
-/* FOOTER */
+.arrow-left{left:36px}
+.arrow-right{right:36px}
+
+/* ===============================
+   FOOTER
+================================ */
 .status{
-  position:absolute;bottom:32px;left:48px;
+  position:absolute;
+  bottom:32px;
+  left:48px;
   font-family:"JetBrains Mono",monospace;
-  font-size:11px;opacity:.4;
+  font-size:11px;
+  opacity:.4;
 }
 .peripheral{
-  position:absolute;bottom:32px;right:48px;
-  display:flex;gap:16px;
+  position:absolute;
+  bottom:32px;
+  right:48px;
+  display:flex;
+  gap:16px;
   font-family:"JetBrains Mono",monospace;
   font-size:11px;
 }
-.peripheral span{opacity:.4;cursor:pointer;}
-.peripheral span:hover{opacity:.8;}
+.peripheral span{
+  opacity:.4;
+  cursor:pointer;
+}
+.peripheral span:hover{opacity:.8}
 
-/* MODAL */
+/* ===============================
+   MODAL
+================================ */
 .modal{
-  position:fixed;inset:0;
+  position:fixed;
+  inset:0;
   background:rgba(11,15,20,.75);
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(10px);
   display:none;
-  align-items:center;justify-content:center;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
 }
 .modal-box{
-  max-width:320px;font-size:13px;line-height:1.6;opacity:.9;
-  padding:16px;background:rgba(11,15,20,.85);
-  border-radius:8px;backdrop-filter:blur(6px);
+  max-width:320px;
+  padding:16px;
+  background:rgba(11,15,20,.9);
+  border-radius:10px;
+  font-size:13px;
+  line-height:1.6;
 }
 
-/* MOBILE ADJUSTMENT */
-@media(max-width:767px){
-  #app{padding:24px;}
-  .core-nav{
-    left:48px;
-    top:45%;
-  }
-  .viewport{
-    left:0;
-    width:100%;
-    top:50%;
-    transform:translateY(-50%);
-    min-height:220px;
-    justify-content:center;
-  }
-  .arrow{font-size:20px;width:36px;height:36px;}
-  .arrow-left{left:20px;}
-  .arrow-right{right:20px;}
-  .status, .peripheral{bottom:16px;}
+/* ===============================
+   PEN IDENTITY
+================================ */
+.pen-slider{
+  max-width:340px;
+  margin:auto;
 }
+
+.pen-card{
+  display:none;
+  position:relative;
+  padding:18px;
+  border-radius:14px;
+  background:rgba(20,20,25,.9);
+  border:1px solid rgba(124,124,255,.25);
+  box-shadow:0 12px 32px rgba(0,0,0,.45);
+  overflow:hidden;
+}
+
+.pen-card.active{
+  display:block;
+}
+
+/* hologram */
+.pen-card .hologram{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent 30%,rgba(124,124,255,.25),transparent 70%);
+  opacity:.25;
+  animation:holoMove 4s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes holoMove{
+  from{transform:translateX(-100%)}
+  to{transform:translateX(100%)}
+}
+
+.pen-header{
+  display:flex;
+  justify-content:space-between;
+  font-size:11px;
+  opacity:.7;
+  margin-bottom:12px;
+}
+
+.pen-body{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.pen-body .row{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+}
+
+.pen-footer{
+  margin-top:14px;
+  font-size:11px;
+  opacity:.4;
+  text-align:right;
+}
+
+/* dots */
+.pen-nav{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:12px;
+}
+.pen-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:rgba(255,255,255,.25);
+  cursor:pointer;
+}
+.pen-dot.active{
+  background:var(--accent);
+}
+
+/* ===============================
+   AVATAR
+================================ */
+.pen-avatar{
+  width:80px;
+  height:80px;
+  margin:0 auto 12px;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid rgba(124,124,255,.35);
+  box-shadow:0 0 12px rgba(124,124,255,.35);
+  position:relative;
+}
+
+.pen-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.pen-avatar::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:repeating-linear-gradient(to bottom,rgba(255,255,255,.02),rgba(255,255,255,.02) 1px,transparent 1px,transparent 2px);
+  pointer-events:none;
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media(max-width:767px){
+  #app{padding:24px}
+  .core-nav{left:48px;top:45%}
+  .viewport{left:0;width:100%}
+  .arrow{width:36px;height:36px;font-size:20px}
+  .arrow-left{left:20px}
+  .arrow-right{right:20px}
+  .status,.peripheral{bottom:16px}
+    }
