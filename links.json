@@ -2,51 +2,51 @@
   "tools": [
     {
       "title": "Generator Aksara",
-      "url": "https://tools.anglumea.com/aksara"
+      "url": "https://www.anglumea.com/aksara"
     },
     {
       "title": "Kalkulator Dana Pensiun",
-      "url": "https://anglumea.com/kalkulator-bunga"
+      "url": "https://www.anglumea.com/kalkulator-bunga"
     },
     {
       "title": "Text Transformer",
-      "url": "https://transform.anglumea.com"
+      "url": "#"
     },
     {
       "title": "Crypto Tracker",
-      "url": "https://crypto.anglumea.com"
+      "url": "#"
     }
   ],
   "projects": [
     {
-      "title": "Anglumea Website",
-      "url": "https://anglumea.com"
+      "title": "Anglumea Guitar Chord",
+      "url": "https://chord.anglumea.com"
     },
     {
       "title": "Korean Study",
-      "url": "https://korean.anglumea.com"
+      "url": "https://learn.anglumea.com/korean"
     },
     {
       "title": "Learn Kanji",
-      "url": "https://kanji.anglumea.com"
+      "url": "https://learn.anglumea.com/japanese"
     },
     {
       "title": "Library",
-      "url": "https://anglumea.com"
+      "url": "https://books.anglumea.com"
     }
   ],
   "games": [
     {
       "title": "Game001",
-      "url": "https://game1.anglumea.com"
+      "url": "#"
     },
     {
       "title": "Prototype One",
-      "url": "https://proto.anglumea.com"
+      "url": "#"
     },
     {
       "title": "Game002",
-      "url": "https://game2.anglumea.com"
+      "url": "#"
     }
   ]
 }
