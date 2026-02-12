@@ -409,3 +409,12 @@ html,body{
   .arrow-right{right:20px}
   .status,.peripheral{bottom:16px}
     }
+
+#modal-box {
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+#modal-box p {
+  margin-bottom: 0.8em;
+}
