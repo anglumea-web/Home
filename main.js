@@ -259,3 +259,4 @@ document.addEventListener("mousemove", e => {
 });
 
 updateArrows();
+
