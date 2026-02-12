@@ -1,52 +1,19 @@
 {
   "tools": [
-    {
-      "title": "Generator Aksara",
-      "url": "https://www.anglumea.com/aksara"
-    },
-    {
-      "title": "Kalkulator Dana Pensiun",
-      "url": "https://www.anglumea.com/kalkulator-bunga"
-    },
-    {
-      "title": "Text Transformer",
-      "url": "#"
-    },
-    {
-      "title": "Crypto Tracker",
-      "url": "#"
-    }
+    { "title": "Generator Aksara", "url": "https://www.anglumea.com/aksara" },
+    { "title": "Kalkulator Dana Pensiun", "url": "https://www.anglumea.com/kalkulator-bunga" },
+    { "title": "Text Transformer", "url": "#" },
+    { "title": "Crypto Tracker", "url": "#" }
   ],
   "projects": [
-    {
-      "title": "Anglumea Guitar Chord",
-      "url": "https://chord.anglumea.com"
-    },
-    {
-      "title": "Korean Study",
-      "url": "https://learn.anglumea.com/korean"
-    },
-    {
-      "title": "Learn Kanji",
-      "url": "https://learn.anglumea.com/japanese"
-    },
-    {
-      "title": "Library",
-      "url": "https://books.anglumea.com"
-    }
+    { "title": "Anglumea Guitar Chord", "url": "https://chord.anglumea.com" },
+    { "title": "Korean Study", "url": "https://learn.anglumea.com/korean" },
+    { "title": "Learn Kanji", "url": "https://learn.anglumea.com/japanese" },
+    { "title": "Library", "url": "https://books.anglumea.com" }
   ],
   "games": [
-    {
-      "title": "Game001",
-      "url": "#"
-    },
-    {
-      "title": "Prototype One",
-      "url": "#"
-    },
-    {
-      "title": "Game002",
-      "url": "#"
-    }
+    { "title": "Game001", "url": "#" },
+    { "title": "Prototype One", "url": "#" },
+    { "title": "Game002", "url": "#" }
   ]
 }
