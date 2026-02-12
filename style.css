@@ -418,3 +418,11 @@ html,body{
 #modal-box p {
   margin-bottom: 0.8em;
 }
+
+.modal-title{
+  text-align:center;
+  margin-bottom:1em;
+  font-family:"JetBrains Mono",monospace;
+  letter-spacing:.1em;
+  opacity:.8;
+}
