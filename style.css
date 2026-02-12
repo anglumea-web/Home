@@ -412,92 +412,141 @@ html,body{
 
 #modal-box {
   max-width: 520px;
-  line-height: 1.6;
+  line-height: 1.45;   /* lebih UI-friendly */
+}
+
+.modal-title {
+  text-align: center;
+  margin: 0 0 0.6em;   /* buang margin atas, rapikan bawah */
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.08em;
+  line-height: 1.2;    /* judul jangan “jatuh” */
+  opacity: 0.85;
 }
 
 #modal-box p {
-  margin-bottom: 0.8em;
-}
-
-.modal-title{
-  text-align:center;
-  margin-bottom:1em;
-  font-family:"JetBrains Mono",monospace;
-  letter-spacing:.1em;
-  opacity:.85;
+  margin-bottom: 0.7em;
 }
 
 
 
-
-/* ===============================
-   CONTACT CARD
-================================ */
-.pen-contact{
-  text-align:center;
-  padding:12px 6px;
+/* Card Client — Anglumea Dark Variant */
+.card-client {
+  background: #0b0f14;
+  width: 13rem;
+  padding: 25px 20px;
+  border: 4px solid #1f6feb;
+  box-shadow: 0 6px 12px rgba(31, 111, 235, 0.35);
+  border-radius: 10px;
+  text-align: center;
+  color: #e6edf3;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
 }
 
-.pen-contact h3{
-  font-family:"JetBrains Mono",monospace;
-  letter-spacing:.2em;
-  font-size:13px;
-  margin-bottom:6px;
-  opacity:.85;
+.card-client:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(31, 111, 235, 0.55);
 }
 
-.pen-contact p{
-  font-size:12px;
-  opacity:.5;
-  margin-bottom:16px;
+.user-picture {
+  width: 5rem;
+  height: 5rem;
+  overflow: hidden;
+  border: 3px solid #1f6feb;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
-.contact-actions{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+.user-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* button base */
-.contact-btn{
-  display:block;
-  padding:10px 14px;
-  border-radius:8px;
-  font-family:"JetBrains Mono",monospace;
-  font-size:12px;
-  text-decoration:none;
-  color:#fff;
-  position:relative;
-  overflow:hidden;
-  transition:transform .25s ease, box-shadow .25s ease;
+.name-client {
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #e6edf3;
 }
 
-/* glow sweep */
-.contact-btn::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255,255,255,.25),
-    transparent 70%
+.name-client span {
+  display: block;
+  font-weight: 300;
+  font-size: 15px;
+  color: #9da7b3;
+}
+
+.social-media:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 18px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #1f6feb,
+    transparent
   );
-  transform:translateX(-100%);
-  transition:transform .6s ease;
 }
 
-.contact-btn:hover::after{
-  transform:translateX(100%);
+.social-media a {
+  position: relative;
+  margin-right: 14px;
+  color: #e6edf3;
+  text-decoration: none;
 }
 
-.contact-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(124,124,255,.35);
+.social-media a:last-child {
+  margin-right: 0;
 }
 
-/* variants */
-.contact-btn.email{ background:#555; }
-.contact-btn.wa{ background:#1ebc5c; }
-.contact-btn.ig{ background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
-.contact-btn.fb{ background:#1877f2; }
+.social-media a svg {
+  width: 1.1rem;
+  fill: currentColor;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-media a:hover svg {
+  transform: scale(1.15);
+  color: #1f6feb;
+}
+
+.tooltip-social {
+  background: #161b22;
+  color: #e6edf3;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -90%);
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.tooltip-social:after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: #161b22 transparent transparent transparent;
+  transform: translateX(-50%);
+}
+
+.social-media a:hover .tooltip-social {
+  opacity: 1;
+  transform: translate(-50%, -130%);
+}
