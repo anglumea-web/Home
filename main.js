@@ -61,12 +61,13 @@ const copy = {
   <div class="pen-card active">
     <div class="hologram"></div>
     <div class="pen-avatar"><img src="images/zhie.jpg"></div>
-    <div class="pen-header"><span>PEN IDENTITY</span><span>ID-ZH01</span></div>
+    <div class="pen-header"><span>PEN IDENTITY</span>-------<span>ID-ZH01</span></div>
     <div class="pen-body">
       <div class="row"><span>Name</span><span>Zhie</span></div>
       <div class="row"><span>Gender</span><span>Male</span></div>
       <div class="row"><span>Occupation</span><span>Driver</span></div>
-      <div class="row"><span>Hobby</span><span>Sports</span></div>
+      <div class="row"><span>Hobby</span><span>music</span></div>
+      <div class="row"><span>.</span><span>Sports</span></div>
       <div class="row"><span>Interest</span><span>Technology</span></div>
       <div class="row"><span>Location</span><span>Indonesia</span></div>
     </div>
@@ -75,7 +76,7 @@ const copy = {
   <div class="pen-card">
     <div class="hologram"></div>
     <div class="pen-avatar"><img src="images/angyta.jpg"></div>
-    <div class="pen-header"><span>PEN IDENTITY</span><span>ID-ANG02</span></div>
+    <div class="pen-header"><span>PEN IDENTITY</span>-------<span>ID-ANG02</span></div>
     <div class="pen-body">
       <div class="row"><span>Name</span><span>Ank</span></div>
       <div class="row"><span>Gender</span><span>Female</span></div>
