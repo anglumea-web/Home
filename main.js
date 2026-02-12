@@ -55,18 +55,19 @@ let currentSlide = 0;
 ========================================================== */
 const copy = {
   about: `
-<h2>About Anglumea</h2>
-<p><strong>Anglumea</strong> adalah platform web dan Android yang mengembangkan dan mengkurasi alat digital untuk pembelajaran, kreativitas, dan pemecahan masalah praktis.</p><br />
+<h2 style="text-align:center; margin-bottom:1em;">About Anglumea</h2>
 
-<p>Platform ini lahir dari kebutuhan nyata akan alat yang sederhana, jujur, dan benar-benar bisa dipakai. Fokus Anglumea bukan pada tren sesaat, melainkan pada kegunaan yang konsisten dan pertumbuhan jangka panjang.</p><br />
+<p><strong>Anglumea</strong> adalah platform web dan Android yang mengembangkan dan mengkurasi alat digital untuk pembelajaran, kreativitas, dan pemecahan masalah praktis.</p>
 
-<p>Anglumea mencakup berbagai proyek, mulai dari alat pembelajaran bahasa dan aksara, tool musik dan ritme, arsip pengetahuan, hingga kalkulator kebutuhan hidup.</p><br />
+<p>Platform ini lahir dari kebutuhan nyata akan alat yang sederhana, jujur, dan benar-benar bisa dipakai. Fokus Anglumea bukan pada tren sesaat, melainkan pada kegunaan yang konsisten dan pertumbuhan jangka panjang.</p>
 
-<p>Sebagian proyek sudah aktif, sementara lainnya masih dalam pengembangan atau tahap konsep—semuanya dibangun secara bertahap, terukur, dan terbuka.</p><br />
+<p>Anglumea mencakup berbagai proyek, mulai dari alat pembelajaran bahasa dan aksara, tool musik dan ritme, arsip pengetahuan, hingga kalkulator kebutuhan hidup.</p>
 
-<p>Ke depan, Anglumea diarahkan menjadi ekosistem alat bantu belajar mandiri yang ringan, fungsional, dan siap dikembangkan lebih luas melalui web dan Play Store.</p><br />
+<p>Sebagian proyek sudah aktif, sementara lainnya masih dalam pengembangan atau tahap konsep—semuanya dibangun secara bertahap, terukur, dan terbuka.</p>
 
-<p><em>Built to be useful. Designed to grow.</em></p>
+<p>Ke depan, Anglumea diarahkan menjadi ekosistem alat bantu belajar mandiri yang ringan, fungsional, dan siap dikembangkan lebih luas melalui web dan Play Store.</p>
+
+<p style="margin-top:1.2em;"><em>Built to be useful. Designed to grow.</em></p>
 `,
   support: "Support keeps the systems alive.",
   follow: `
