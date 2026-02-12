@@ -54,7 +54,7 @@ let currentSlide = 0;
    STATIC COPY
 ========================================================== */
 const copy = {
-  about: "Anglumea is a quiet archive of independent systems.",
+  about: "Anglumea - a quiet archive of independent systems.",
   support: "Support keeps the systems alive.",
   follow: `
 <div class="pen-slider">
@@ -77,11 +77,11 @@ const copy = {
     <div class="pen-avatar"><img src="images/angyta.jpg"></div>
     <div class="pen-header"><span>PEN IDENTITY</span><span>ID-ANG02</span></div>
     <div class="pen-body">
-      <div class="row"><span>Name</span><span>Angyta</span></div>
+      <div class="row"><span>Name</span><span>Ank</span></div>
       <div class="row"><span>Gender</span><span>Female</span></div>
       <div class="row"><span>Occupation</span><span>Accountant</span></div>
       <div class="row"><span>Hobby</span><span>Writing</span></div>
-      <div class="row"><span>Interest</span><span>Artificial Intelligence</span></div>
+      <div class="row"><span>Interest</span><span>Sports</span></div>
       <div class="row"><span>Location</span><span>Indonesia</span></div>
     </div>
   </div>
