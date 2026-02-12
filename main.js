@@ -3,14 +3,14 @@
 ========================================================== */
 let CARD_CONFIG = null;
 
-fetch("links.json")
+fetch("data/links.json")
   .then(res => res.json())
   .then(data => {
     CARD_CONFIG = data;
     buildCards();
   })
   .catch(() => {
-    console.warn("links.json not found — using HTML fallback");
+    console.warn("links.json not found");
   });
 
 function buildCards() {
@@ -51,69 +51,30 @@ let currentIndex = null;
 let currentSlide = 0;
 
 /* ==========================================================
-   STATIC COPY
+   MODAL CONTENT LOADER (SAFE)
 ========================================================== */
-const copy = {
-  about: `
-<h2 style="text-align:center; margin-bottom:1em;">About Anglumea</h2>
-
-<p><strong>Anglumea</strong> adalah platform web dan Android yang mengembangkan dan mengkurasi alat digital untuk pembelajaran, kreativitas, dan pemecahan masalah praktis.</p>
-
-<p>Platform ini lahir dari kebutuhan nyata akan alat yang sederhana, jujur, dan benar-benar bisa dipakai. Fokus Anglumea bukan pada tren sesaat, melainkan pada kegunaan yang konsisten dan pertumbuhan jangka panjang.</p>
-
-<p>Anglumea mencakup berbagai proyek, mulai dari alat pembelajaran bahasa dan aksara, tool musik dan ritme, arsip pengetahuan, hingga kalkulator kebutuhan hidup.</p>
-
-<p>Sebagian proyek sudah aktif, sementara lainnya masih dalam pengembangan atau tahap konsep—semuanya dibangun secara bertahap, terukur, dan terbuka.</p>
-
-<p>Ke depan, Anglumea diarahkan menjadi ekosistem alat bantu belajar mandiri yang ringan, fungsional, dan siap dikembangkan lebih luas melalui web dan Play Store.</p>
-
-<p style="margin-top:1.2em;"><em>Built to be useful. Designed to grow.</em></p>
-`,
-  support: "Support keeps the systems alive.",
-  follow: `
-<div class="pen-slider">
-  <div class="pen-card active">
-    <div class="hologram"></div>
-    <div class="pen-avatar"><img src="images/zhie.jpg"></div>
-    <div class="pen-header"><span>PEN IDENTITY</span>-------<span>ID-ZH01</span></div>
-    <div class="pen-body">
-      <div class="row"><span>Name</span><span>Zhie</span></div>
-      <div class="row"><span>Gender</span><span>Male</span></div>
-      <div class="row"><span>Occupation</span><span>Driver</span></div>
-      <div class="row"><span>Hobby</span><span>music</span></div>
-      <div class="row"><span>.</span><span>Sports</span></div>
-      <div class="row"><span>Interest</span><span>Technology</span></div>
-      <div class="row"><span>Location</span><span>Indonesia</span></div>
-    </div>
-  </div>
-
-  <div class="pen-card">
-    <div class="hologram"></div>
-    <div class="pen-avatar"><img src="images/angyta.jpg"></div>
-    <div class="pen-header"><span>PEN IDENTITY</span>-------<span>ID-ANG02</span></div>
-    <div class="pen-body">
-      <div class="row"><span>Name</span><span>Ank</span></div>
-      <div class="row"><span>Gender</span><span>Female</span></div>
-      <div class="row"><span>Occupation</span><span>Accountant</span></div>
-      <div class="row"><span>Hobby</span><span>Writing</span></div>
-      <div class="row"><span>Interest</span><span>Sports</span></div>
-      <div class="row"><span>Location</span><span>Indonesia</span></div>
-    </div>
-  </div>
-</div>
-
-<div class="pen-nav">
-  <span class="pen-dot active"></span>
-  <span class="pen-dot"></span>
-</div>
-`
-};
+function loadModalContent(name) {
+  fetch(`content/${name}.html`)
+    .then(res => res.text())
+    .then(html => {
+      modalBox.innerHTML = html;
+      modal.style.display = "flex";
+    })
+    .catch(() => {
+      modalBox.innerHTML = "<p>Content not available.</p>";
+      modal.style.display = "flex";
+    });
+}
 
 /* ==========================================================
    ARROWS
 ========================================================== */
 function updateArrows() {
-  const visible = active && panels[currentIndex]?.querySelectorAll(".card").length > 1;
+  const visible =
+    active &&
+    panels[currentIndex] &&
+    panels[currentIndex].querySelectorAll(".card").length > 1;
+
   arrowLeft.style.display = visible ? "flex" : "none";
   arrowRight.style.display = visible ? "flex" : "none";
 }
@@ -183,7 +144,7 @@ document.addEventListener("click", () => {
 
   viewport.classList.remove("active");
   viewport.style.pointerEvents = "none";
-  panels.forEach(p => p.style.display = "none");
+  panels.forEach(p => (p.style.display = "none"));
   gsap.to(track, { opacity: 0, duration: 0.3 });
 
   updateArrows();
@@ -208,11 +169,9 @@ arrowRight.addEventListener("click", e => {
 ========================================================== */
 document.addEventListener("pointerup", e => {
   let el = e.target;
-
   while (el && !el.classList?.contains("card")) {
     el = el.parentElement;
   }
-
   if (!el || !el.dataset.link) return;
 
   e.stopPropagation();
@@ -220,13 +179,12 @@ document.addEventListener("pointerup", e => {
 });
 
 /* ==========================================================
-   MODAL
+   MODAL TRIGGERS
 ========================================================== */
 document.querySelectorAll(".peripheral span").forEach(el => {
   el.addEventListener("click", e => {
     e.stopPropagation();
-    modalBox.innerHTML = copy[el.dataset.modal] || "";
-    modal.style.display = "flex";
+    loadModalContent(el.dataset.modal);
   });
 });
 
@@ -235,7 +193,7 @@ modal.addEventListener("pointerdown", e => {
 });
 
 /* ==========================================================
-   PEN TAP — DOTS
+   PEN DOT & SWIPE (UNCHANGED LOGIC)
 ========================================================== */
 modalBox.addEventListener("click", e => {
   const dot = e.target.closest(".pen-dot");
@@ -252,9 +210,6 @@ modalBox.addEventListener("click", e => {
   cards[index].classList.add("active");
 });
 
-/* ==========================================================
-   PEN SWIPE — TOUCH ONLY
-========================================================== */
 let penStartX = 0;
 
 modalBox.addEventListener("touchstart", e => {
