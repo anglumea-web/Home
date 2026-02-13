@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kalkulator Cicilan – Investor OS</title>
+
+<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#b89b5e">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="topbar">
+  <div class="title">Investor Loan Calculator</div>
+  <button class="mode-btn" onclick="toggleMode()">☀️ / 🌙</button>
+</header>
+
+<section class="panel glass">
+  <h3>Client Information</h3>
+
+  <label>Nama Klien</label>
+  <input id="namaUser">
+
+  <label>Harga Aset</label>
+  <input id="harga" inputmode="numeric">
+
+  <label>Down Payment</label>
+  <input id="dp" inputmode="numeric">
+
+  <div class="grid-2">
+    <div>
+      <label>Suku Bunga (%)</label>
+      <input id="bunga" type="number" value="10">
+    </div>
+    <div>
+      <label>Metode Bunga</label>
+      <select id="bungaTipe">
+        <option value="efektif">Efektif</option>
+        <option value="flat">Flat</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <label>Rentang</label>
+      <select id="tipeBunga">
+        <option value="tahun">Per Tahun</option>
+        <option value="bulan">Per Bulan</option>
+      </select>
+    </div>
+    <div>
+      <label>Tenor (Tahun)</label>
+      <input id="tenor" type="number" min="1" max="25" value="5">
+    </div>
+  </div>
+
+  <button class="primary" onclick="hitung()">Hitung Simulasi</button>
+</section>
+
+<section id="summary" class="panel glass hidden"></section>
+
+<section class="panel glass">
+  <canvas id="grafikCicilan"></canvas>
+</section>
+
+<section class="panel glass">
+  <div id="detail"></div>
+</section>
+
+<button id="downloadBtn" class="export hidden" onclick="downloadPDF()">
+📄 Export Investor PDF
+</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
