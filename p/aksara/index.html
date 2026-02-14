@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generator Aksara Jawa</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Javanese&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h1>Generator Aksara Jawa</h1>
+  <p id="modeLabel">Latin → Aksara Jawa</p>
+
+  <textarea
+    id="input"
+    placeholder="Contoh: anak lanang mangan tahu"
+  ></textarea>
+
+  <div class="controls">
+    <label>
+      <input type="checkbox" id="murdaToggle" checked>
+      Gunakan Aksara Murda
+    </label>
+
+    <div class="right">
+      <button id="swapBtn" type="button">🔁 Swap</button>
+      <button id="copyBtn" type="button">Salin</button>
+    </div>
+  </div>
+
+  <div id="output"></div>
+
+  <!-- DRAWER -->
+  <div id="bottomDrawer">
+    <div id="drawerHandle">
+      <div class="drawer-bar"></div>
+      <div class="drawer-title">Anglumea</div>
+    </div>
+
+    <div class="drawer-content">
+        <button id="shareBtn">Share Tools</button>
+        <a
+    href="https://home.anglumea.com"
+    class="drawer-link"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Another Tools
+        </a>
+        <button id="aboutBtn">About</button>
+        <button id="donateBtn">Donate</button>
+     </div>
+  </div>
+
+  <!-- ✅ SATU-SATUNYA SCRIPT -->
+  <script type="module" src="app.js"></script>
+
+
+<!-- DONATE MODAL -->
+<div id="donateModal" class="modal hidden">
+  <div class="modal-box">
+    <h3>Dukung Pengembangan</h3>
+    <p>Pilih metode donasi:</p>
+
+    <div class="donate-options">
+      <a
+        href="https://www.buymeacoffee.com/anglumea"
+        target="_blank"
+        class="donate-btn coffee"
+      >☕ Buy Me a Coffee</a>
+
+      <a
+        href="https://www.paypal.me/tetsuya69"
+        target="_blank"
+        class="donate-btn paypal"
+      >💳 PayPal</a>
+
+      <div class="donate-btn bitcoin" id="btcBtn">
+        ₿ Bitcoin
+        <small id="btcAddress">bc1qu8y6zmz464xr95w4k4m4fkr9cj67hcudhwmdrj</small>
+      </div>
+    </div>
+
+    <button id="closeDonate">Tutup</button>
+  </div>
+</div>
+<!-- SHARE MODAL -->
+<div id="shareModal" class="modal hidden">
+  <div class="modal-box">
+    <h3>Bagikan Tools</h3>
+    <p>Bagikan Generator Aksara Jawa:</p>
+
+    <div class="share-options">
+      <a
+        href="https://wa.me/?text=Generator%20Aksara%20Jawa%20PBJ%20Ketat%20https://tools.anglumea.com/aksara"
+        target="_blank"
+        class="share-btn wa"
+      >WhatsApp</a>
+
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u=https://tools.anglumea.com/aksara"
+        target="_blank"
+        class="share-btn fb"
+      >Facebook</a>
+
+      <a
+        href="https://www.instagram.com/"
+        target="_blank"
+        class="share-btn ig"
+      >Instagram</a>
+    </div>
+
+    <button class="closeBtn">Tutup</button>
+  </div>
+</div>
+<!-- ABOUT MODAL -->
+<div id="aboutModal" class="modal hidden">
+  <div class="modal-box">
+    <h3>Tentang Proyek</h3>
+
+    <p class="about-text">
+      Proyek Generator Aksara Jawa ini masih dalam tahap pengembangan
+      dan belum sepenuhnya sempurna.
+      <br><br>
+      Aplikasi ini dibuat sebagai upaya kecil untuk membantu
+      menjaga, mengenalkan, dan melestarikan
+      aksara serta budaya Jawa di era digital,
+      khususnya untuk kebutuhan pendidikan.
+      <br><br>
+      Masukan dan dukungan sangat berarti
+      untuk pengembangan selanjutnya.
+    </p>
+
+    <button class="closeBtn">Tutup</button>
+  </div>
+</div>
+</body>
+</html>
