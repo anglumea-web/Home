@@ -1,23 +1,19 @@
 {
   "tools": [
     { "title": "Generator Aksara Jawa", "url": "p/aksara" },
-    { "title": "Kalkulator Loan", "url": "p/loan" },
-    { "title": "Text Transformer", "url": "#" },
-    { "title": "Crypto Tracker", "url": "#" }
+    { "title": "Kalkulator Loan", "url": "p/loan" }
   ],
   "projects": [
-    { "title": "Korean Study", "url": "https://learn.anglumea.com/korean" },
-    { "title": "Learn Kanji", "url": "https://learn.anglumea.com/japanese" },
-    { "title": "Library", "url": "https://books.anglumea.com" }
+    { "title": "Korean Study", "url": "https://rzee-jpn.github.io/Aksara/posts/hangul/" },
+    { "title": "Learn Kanji", "url": "https://rzee-jpn.github.io/Aksara/posts/kanji/" },
+    { "title": "Library", "url": "https://rzee-jpn.github.io/mydiary/" }
   ],
   "games": [
     { "title": "Game001", "url": "#" },
-    { "title": "Prototype One", "url": "#" },
     { "title": "Game002", "url": "#" }
   ],
   "superapps": [
     { "title": "Guitar Chords", "url": "https://chord.anglumea.com" },
-    { "title": "Quran", "url": "p/quran" },
-    { "title": "Game002", "url": "#" }
+    { "title": "Quran", "url": "p/quran" }
   ]
 }
