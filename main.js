@@ -17,6 +17,7 @@ function buildCards() {
   renderGroup("tools", "tools-slider");
   renderGroup("projects", "projects-slider");
   renderGroup("games", "games-slider");
+  renderGroup("superapps", "superapps-slider");
 }
 
 function renderGroup(group, targetId) {
