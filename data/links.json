@@ -1,11 +1,11 @@
 {
   "tools": [
-    { "title": "Generator Aksara", "url": "https://www.anglumea.com/aksara" },
-    { "title": "Kalkulator Dana Pensiun", "url": "https://www.anglumea.com/kalkulator-bunga" },
+    { "title": "Generator Aksara", "url": "p/aksara" },
+    { "title": "Kalkulator Dana Pensiun", "url": "p/loan" },
     { "title": "Text Transformer", "url": "#" },
     { "title": "Crypto Tracker", "url": "#" }
   ],
-  "projects": [
+  "project": [
     { "title": "Anglumea Guitar Chord", "url": "https://chord.anglumea.com" },
     { "title": "Korean Study", "url": "https://learn.anglumea.com/korean" },
     { "title": "Learn Kanji", "url": "https://learn.anglumea.com/japanese" },
