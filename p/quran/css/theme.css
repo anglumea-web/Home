@@ -39,18 +39,44 @@ body{
    SIDEBAR PREMIUM UI
 ============================== */
 
+/* ==============================
+   SIDEBAR ADAPTIVE PREMIUM
+============================== */
+
 .sidebar{
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,.75),
-    rgba(255,255,255,.55)
-  );
+
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--panel-bg) 85%, white 5%),
+      var(--panel-bg)
+    );
+
   backdrop-filter:blur(30px);
   -webkit-backdrop-filter:blur(30px);
 
-  border-left:1px solid rgba(0,0,0,.06);
-  box-shadow:-10px 0 40px rgba(0,0,0,.12);
+  border-left:1px solid color-mix(in srgb, var(--text) 12%, transparent);
+
+  box-shadow:
+    -18px 0 48px rgba(0,0,0,.18);
+
   padding-bottom:2rem;
+  transition: background .35s ease;
+}
+
+/* subtle accent glow */
+.sidebar::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(
+      circle at top right,
+      color-mix(in srgb, var(--accent) 25%, transparent),
+      transparent 60%
+    );
+  opacity:.35;
 }
 
 
@@ -70,7 +96,7 @@ body{
 .sidebar hr{
   border:none;
   height:1px;
-  background:rgba(0,0,0,.06);
+  background:color-mix(in srgb, var(--text) 15%, transparent);
   margin:1.2rem 0;
 }
 
@@ -92,7 +118,7 @@ body{
   font-size:.85rem;
   font-weight:500;
 
-  background:rgba(255,255,255,.6);
+  background:var(--panel-bg);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.7),
     0 4px 12px rgba(0,0,0,.08);
@@ -105,7 +131,7 @@ body{
 }
 
 .theme-options button:hover{
-  background:rgba(255,255,255,.9);
+  background:color-mix(in srgb, var(--panel-bg) 80%, white 20%);
 }
 
 
@@ -116,7 +142,7 @@ body{
   padding:.9rem 1rem;
 
   border-radius:16px;
-  background:rgba(255,255,255,.65);
+  background:var(--panel-bg);
 
   box-shadow:
     0 6px 18px rgba(0,0,0,.08),
@@ -148,7 +174,7 @@ body{
   padding:.7rem .9rem;
 
   border-radius:14px;
-  background:rgba(255,255,255,.6);
+  background:var(--panel-bg);
 
   box-shadow:0 4px 14px rgba(0,0,0,.07);
   transition:.2s;
@@ -170,7 +196,9 @@ body{
 
 .btn-ghost{
   border:none;
-  background:rgba(0,0,0,.05);
+  background:color-mix(in srgb, var(--text) 8%, transparent);
+  color:var(--text);
+
   padding:.35rem .6rem;
   border-radius:10px;
   font-size:.75rem;
@@ -179,7 +207,7 @@ body{
 }
 
 .btn-ghost:hover{
-  background:rgba(0,0,0,.1);
+  background:color-mix(in srgb, var(--text) 15%, transparent);
 }
 
 
@@ -192,4 +220,13 @@ body{
 
   background:rgba(0,0,0,.06);
   font-weight:500;
+}
+
+
+
+
+
+:focus-visible{
+  outline:2px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  outline-offset:2px;
 }
